@@ -1,3 +1,4 @@
+<!-- toc -->
 # gitbook
 [参考教程](http://www.chengweiyang.cn/gitbook/basic-usage/README.html)
 需要注意的是，我们正常安装的其实是gitbook-cli,如果只是安装gitbook的话，gitbook的命令行是无效的。也就是输入：
