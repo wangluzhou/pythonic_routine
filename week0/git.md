@@ -21,3 +21,5 @@ git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
 ```
+
+## 我把.gitignore写成.gitigorne了，居然没有发现。。。囧
