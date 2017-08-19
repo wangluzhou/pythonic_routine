@@ -21,3 +21,13 @@ git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
 ```
+# 关于git无法忽视_book的最终原因
+好吧，是我把.gitignore写成.gitigorne了
+
+# git切换分支
+
+```
+git branch -a 查看所有分支
+git branch 查看当前分支
+git checkout master 切换到master分支
+```
