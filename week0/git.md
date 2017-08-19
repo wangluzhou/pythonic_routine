@@ -31,3 +31,5 @@ git branch -a 查看所有分支
 git branch 查看当前分支
 git checkout master 切换到master分支
 ```
+
+## 关于git无法识别.gitignore的原因
