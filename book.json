@@ -19,7 +19,7 @@
       "className": "atoc"
     },
     "download-pdf-link": {
-     "base": "https://www.gitbook.com/book/poppy-project/poppy-docs/",
+     "base": "https://github.com/wangluzhou/pythonic_routine/tree/master/_book",
      "label": {
          "en": "Download PDF",
          "fr": "Télécharger le PDF"
