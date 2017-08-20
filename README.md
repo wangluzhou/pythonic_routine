@@ -24,3 +24,24 @@
 ```
 
 然后在week0下面添加gitbook.md
+
+
+## 操作手册
+由于当前gitbook发布的电子书在浏览器上总是打不开，因此暂时采用迂回方法,即利用gitpage进行发布。
+1. 安装gitbook
+2. 在本地clone我们的pythonic routine这个库
+3. 进行自己的修改
+4. 在pythonic_routine目录下输入
+```
+gitbook build
+```
+生成静态页面目录_book
+5. 将_book下面所有的文件以及pythonic_routine下所有的文件都copy到另一个新的文件夹下，cd到该文件夹下，切换到gh-pages分支：
+```
+git checkout gh-pages
+```
+然后上传到gh-pages.即add，commit,push流程。
+注意最后的push命令如下：
+```
+git push origin gh-pages
+```
