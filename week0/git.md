@@ -17,7 +17,19 @@ doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 规则很简单，不做过多解释，但是有时候在项目开发过程中，突然心血来潮想把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被track的文件，**如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的**。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：
 
 ```
-
+git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
 ```
+# 关于git无法忽视_book的最终原因
+好吧，是我把.gitignore写成.gitigorne了
+
+# git切换分支
+
+```
+git branch -a 查看所有分支
+git branch 查看当前分支
+git checkout master 切换到master分支
+```
+
+## 关于git无法识别.gitignore的原因

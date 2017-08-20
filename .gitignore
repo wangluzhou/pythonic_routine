@@ -1,0 +1,10 @@
+_book/
+_book/*
+*book/
+*book/*
+_book
+.*
+.DS_Store
+*.html
+
+!.gitignore

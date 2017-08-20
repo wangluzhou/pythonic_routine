@@ -6,7 +6,8 @@
     "search-pro",
     "atoc",
     "new-flowchart",
-    "mermaid-atom-mden"
+    "mermaid-atom-mden",
+    "download-pdf-link"
   ],
   "pluginsConfig": {
     "search-pro": {
@@ -16,6 +17,14 @@
     "atoc": {
       "addClass": true,
       "className": "atoc"
-    }
+    },
+    "download-pdf-link": {
+     "base": "https://github.com/wangluzhou/pythonic_routine/tree/master/_book",
+     "label": {
+         "en": "Download PDF",
+         "fr": "Télécharger le PDF"
+     }
+   }
+
   }
 }
