@@ -79,3 +79,45 @@ if __name__ == "__main__":
 
 
 ```
+
+# Becky：
+
+weather = {}
+history =  {}
+help =  '''
+        输入城市名，查询该城市天气情况。
+        输入‘h’或‘help’，获取帮助文档。
+        输入history，获取历史查询记录。
+        输入‘quit’或‘exit’，退出查询系统。
+        '''
+def print_history():
+    print("这是您查询的历史记录：")
+    for city, weather in list(history.items()):# 将字典转换为列表就可以格式化输出啦~
+        print("{}目前的天气是{}".format(city, weather))
+
+with open("weather_info.txt", "r", encoding = "UTF-8") as file:# 打开文件，添加相对路径用../文件夹/文件名
+    for lines in file:# 转换为字典
+        weather_list = lines.strip().split(",")
+        weather[weather_list[0]] = weather_list[1]
+
+while True:
+    user_type = input("请输入指令或城市名：")
+    if user_type in weather:# 输出城市天气
+        answer = weather.get(user_type)
+        print("{}目前的天气是{}".format(user_type, answer))
+        history[user_type] =answer
+
+    elif user_type in ("h", "help"):# 输出指令help
+#elif (user_type == "h") or (user_type == "help"):
+        print(help)           
+
+    elif user_type == "history":# 输出历史记录
+        print_history()
+
+    elif user_type in ('quit', 'exit'):# 退出
+        print_history()
+        print("感谢您的查询，希望你查询的城市天气如您所愿。")
+        break
+        
+    else:# 用户输入其他字符时输出
+        print("你所查询的城市或指令不在服务区，请输入“h”或“help”获取帮助。")
