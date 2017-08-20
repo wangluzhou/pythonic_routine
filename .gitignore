@@ -6,5 +6,5 @@ _book
 .*
 .DS_Store
 *.html
-
+!.git
 !.gitignore
