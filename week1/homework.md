@@ -81,7 +81,7 @@ if __name__ == "__main__":
 ```
 
 # Becky：
-
+```Python
 weather = {}
 history =  {}
 help =  '''
@@ -118,6 +118,7 @@ while True:
         print_history()
         print("感谢您的查询，希望你查询的城市天气如您所愿。")
         break
-        
+
     else:# 用户输入其他字符时输出
         print("你所查询的城市或指令不在服务区，请输入“h”或“help”获取帮助。")
+```
