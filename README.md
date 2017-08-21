@@ -1,4 +1,7 @@
-# Pythonic Routine协作参与者：freeman， 大船，beckyme
+# Pythonic Routine协作写作参与者
+- freeman
+- 大船
+- beckyme
 
 
 
