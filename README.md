@@ -1,3 +1,8 @@
+# Pythonic Routine协作参与者：freeman， 大船，beckyme
+
+
+
+
 # Introduction
 
 一起来写作写gitbook吧~
