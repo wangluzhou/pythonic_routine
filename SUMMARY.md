@@ -6,7 +6,7 @@
   * [环境.git使用](week0/git.md)
 * [第1周](week1/README.md)
   * [作业.天气查询系统](week1/homework.md)
-* [第2周](week2/README.md)
+* [第2周:连接真实的世界](week2/README.md)
 * [第3周](week3/README.md)
 * [第4周](week4/README.md)
 * [第5周](week5/README.md)
