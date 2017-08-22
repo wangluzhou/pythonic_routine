@@ -200,11 +200,30 @@
                 <a href="../week2/">
             
                     
-                    第2周
+                    第2周:连接真实的世界
             
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../week2/homework.html">
+            
+                <a href="../week2/homework.html">
+            
+                    
+                    作业.天气查询系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -420,6 +439,47 @@
 <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
     run()
 </code></pre>
+<h1 id="becky&#xFF1A;">Becky&#xFF1A;</h1>
+<pre><code class="lang-Python">weather = {}
+history =  {}
+help =  <span class="hljs-string">&apos;&apos;&apos;
+        &#x8F93;&#x5165;&#x57CE;&#x5E02;&#x540D;&#xFF0C;&#x67E5;&#x8BE2;&#x8BE5;&#x57CE;&#x5E02;&#x5929;&#x6C14;&#x60C5;&#x51B5;&#x3002;
+        &#x8F93;&#x5165;&#x2018;h&#x2019;&#x6216;&#x2018;help&#x2019;&#xFF0C;&#x83B7;&#x53D6;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x3002;
+        &#x8F93;&#x5165;history&#xFF0C;&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x67E5;&#x8BE2;&#x8BB0;&#x5F55;&#x3002;
+        &#x8F93;&#x5165;&#x2018;quit&#x2019;&#x6216;&#x2018;exit&#x2019;&#xFF0C;&#x9000;&#x51FA;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#x3002;
+        &apos;&apos;&apos;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_history</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&quot;&#x8FD9;&#x662F;&#x60A8;&#x67E5;&#x8BE2;&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF1A;&quot;</span>)
+    <span class="hljs-keyword">for</span> city, weather <span class="hljs-keyword">in</span> list(history.items()):<span class="hljs-comment"># &#x5C06;&#x5B57;&#x5178;&#x8F6C;&#x6362;&#x4E3A;&#x5217;&#x8868;&#x5C31;&#x53EF;&#x4EE5;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#x5566;~</span>
+        print(<span class="hljs-string">&quot;{}&#x76EE;&#x524D;&#x7684;&#x5929;&#x6C14;&#x662F;{}&quot;</span>.format(city, weather))
+
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;weather_info.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, encoding = <span class="hljs-string">&quot;UTF-8&quot;</span>) <span class="hljs-keyword">as</span> file:<span class="hljs-comment"># &#x6253;&#x5F00;&#x6587;&#x4EF6;&#xFF0C;&#x6DFB;&#x52A0;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x7528;../&#x6587;&#x4EF6;&#x5939;/&#x6587;&#x4EF6;&#x540D;</span>
+    <span class="hljs-keyword">for</span> lines <span class="hljs-keyword">in</span> file:<span class="hljs-comment"># &#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x5178;</span>
+        weather_list = lines.strip().split(<span class="hljs-string">&quot;,&quot;</span>)
+        weather[weather_list[<span class="hljs-number">0</span>]] = weather_list[<span class="hljs-number">1</span>]
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+    user_type = input(<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x6307;&#x4EE4;&#x6216;&#x57CE;&#x5E02;&#x540D;&#xFF1A;&quot;</span>)
+    <span class="hljs-keyword">if</span> user_type <span class="hljs-keyword">in</span> weather:<span class="hljs-comment"># &#x8F93;&#x51FA;&#x57CE;&#x5E02;&#x5929;&#x6C14;</span>
+        answer = weather.get(user_type)
+        print(<span class="hljs-string">&quot;{}&#x76EE;&#x524D;&#x7684;&#x5929;&#x6C14;&#x662F;{}&quot;</span>.format(user_type, answer))
+        history[user_type] =answer
+
+    <span class="hljs-keyword">elif</span> user_type <span class="hljs-keyword">in</span> (<span class="hljs-string">&quot;h&quot;</span>, <span class="hljs-string">&quot;help&quot;</span>):<span class="hljs-comment"># &#x8F93;&#x51FA;&#x6307;&#x4EE4;help</span>
+<span class="hljs-comment">#elif (user_type == &quot;h&quot;) or (user_type == &quot;help&quot;):</span>
+        print(help)           
+
+    <span class="hljs-keyword">elif</span> user_type == <span class="hljs-string">&quot;history&quot;</span>:<span class="hljs-comment"># &#x8F93;&#x51FA;&#x5386;&#x53F2;&#x8BB0;&#x5F55;</span>
+        print_history()
+
+    <span class="hljs-keyword">elif</span> user_type <span class="hljs-keyword">in</span> (<span class="hljs-string">&apos;quit&apos;</span>, <span class="hljs-string">&apos;exit&apos;</span>):<span class="hljs-comment"># &#x9000;&#x51FA;</span>
+        print_history()
+        print(<span class="hljs-string">&quot;&#x611F;&#x8C22;&#x60A8;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x5E0C;&#x671B;&#x4F60;&#x67E5;&#x8BE2;&#x7684;&#x57CE;&#x5E02;&#x5929;&#x6C14;&#x5982;&#x60A8;&#x6240;&#x613F;&#x3002;&quot;</span>)
+        <span class="hljs-keyword">break</span>
+
+    <span class="hljs-keyword">else</span>:<span class="hljs-comment"># &#x7528;&#x6237;&#x8F93;&#x5165;&#x5176;&#x4ED6;&#x5B57;&#x7B26;&#x65F6;&#x8F93;&#x51FA;</span>
+        print(<span class="hljs-string">&quot;&#x4F60;&#x6240;&#x67E5;&#x8BE2;&#x7684;&#x57CE;&#x5E02;&#x6216;&#x6307;&#x4EE4;&#x4E0D;&#x5728;&#x670D;&#x52A1;&#x533A;&#xFF0C;&#x8BF7;&#x8F93;&#x5165;&#x201C;h&#x201D;&#x6216;&#x201C;help&#x201D;&#x83B7;&#x53D6;&#x5E2E;&#x52A9;&#x3002;&quot;</span>)
+</code></pre>
 <script type="text/javascript">var className='atoc';</script>
                                 
                                 </section>
@@ -468,7 +528,7 @@
                 </a>
                 
                 
-                <a href="../week2/" class="navigation navigation-next " aria-label="Next page: 第2周">
+                <a href="../week2/" class="navigation navigation-next " aria-label="Next page: 第2周:连接真实的世界">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -479,7 +539,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"作业.天气查询系统","level":"1.3.1","depth":2,"next":{"title":"第2周","level":"1.4","depth":1,"path":"week2/README.md","ref":"week2/README.md","articles":[]},"previous":{"title":"第1周","level":"1.3","depth":1,"path":"week1/README.md","ref":"week1/README.md","articles":[{"title":"作业.天气查询系统","level":"1.3.1","depth":2,"path":"week1/homework.md","ref":"week1/homework.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["search","search-pro","atoc","new-flowchart","mermaid-atom-mden","download-pdf-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"new-flowchart":{},"atoc":{"addClass":true,"className":"atoc"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-atom-mden":{},"download-pdf-link":{"label":{"en":"Download PDF","fr":"Télécharger le PDF"},"base":"https://github.com/wangluzhou/pythonic_routine/tree/master/_book"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pythonic_routine","gitbook":">=2.0.0"},"file":{"path":"week1/homework.md","mtime":"2017-08-20T05:47:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-20T08:57:58.649Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"作业.天气查询系统","level":"1.3.1","depth":2,"next":{"title":"第2周:连接真实的世界","level":"1.4","depth":1,"path":"week2/README.md","ref":"week2/README.md","articles":[{"title":"作业.天气查询系统","level":"1.4.1","depth":2,"path":"week2/homework.md","ref":"week2/homework.md","articles":[]}]},"previous":{"title":"第1周","level":"1.3","depth":1,"path":"week1/README.md","ref":"week1/README.md","articles":[{"title":"作业.天气查询系统","level":"1.3.1","depth":2,"path":"week1/homework.md","ref":"week1/homework.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["search","search-pro","atoc","new-flowchart","mermaid-atom-mden","download-pdf-link","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"new-flowchart":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-atom-mden":{},"download-pdf-link":{"label":{"en":"Download PDF","fr":"Télécharger le PDF"},"base":"https://github.com/wangluzhou/pythonic_routine/tree/master/_book"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pythonic_routine","gitbook":">=2.0.0"},"file":{"path":"week1/homework.md","mtime":"2017-08-21T15:21:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-22T16:19:13.661Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -528,6 +588,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-download-pdf-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

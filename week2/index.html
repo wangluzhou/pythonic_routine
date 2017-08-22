@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第2周 · pythonic_routine</title>
+        <title>第2周:连接真实的世界 · pythonic_routine</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -73,7 +73,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../week3/" />
+    <link rel="next" href="homework.html" />
     
     
     <link rel="prev" href="../week1/homework.html" />
@@ -200,11 +200,30 @@
                 <a href="./">
             
                     
-                    第2周
+                    第2周:连接真实的世界
             
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="homework.html">
+            
+                <a href="homework.html">
+            
+                    
+                    作业.天气查询系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -329,7 +348,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第2周</a>
+        <a href=".." >第2周:连接真实的世界</a>
     </h1>
 </div>
 
@@ -347,7 +366,146 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <script type="text/javascript">var className='atoc';</script>
+                                <h3 id="1a">1A</h3>
+<p>&#x548C; API &#x6B22;&#x5FEB;&#x73A9;&#x800D;</p>
+<p>&#x641E;&#x5B9A;&#x4F60;&#x7684;&#x9996;&#x4E2A; MVP&#xFF0C;&#x73B0;&#x5728;&#x4F60;&#x662F;&#x4E0D;&#x662F;&#x5185;&#x5FC3;&#x7279;&#x522B;&#x6B23;&#x559C;&#xFF0C;&#x611F;&#x89C9;&#x81EA;&#x5DF1;&#x6F5C;&#x529B;&#x65E0;&#x9650;&#xFF1F;</p>
+<p>&#x554A;&#x54C8;&#xFF0C;&#x8BF7;&#x4FDD;&#x6301;&#x8FD9;&#x6837;&#x7684;&#x81EA;&#x4FE1;&#xFF0C;&#x8FCE;&#x63A5;&#x672C;&#x7AE0;&#x65B0;&#x6311;&#x6218; &#x2014;&#x2014; &#x7528; API &#x83B7;&#x53D6;&#x771F;&#x5B9E;&#x3001;&#x5B9E;&#x65F6;&#x7684;&#x5929;&#x6C14;&#x6570;&#x636E;&#xFF0C;&#x8BA9;&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x4E0E;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x4E92;&#x901A;&#x8D77;&#x6765;&#x3002;</p>
+<p>API ~ Application Programming Interface</p>
+<p>&#x5B8C;&#x6210;&#x672C;&#x7AE0;&#x4EFB;&#x52A1;&#xFF0C;&#x4F60;&#x7684;&#x5C0F;&#x5C0F;&#x7A0B;&#x5E8F;&#xFF0C;&#x5C06;&#x53EF;&#x4EE5;&#x4E3A;&#x4F60;&#x64AD;&#x62A5;&#x6700;&#x65B0;&#x5929;&#x6C14;&#x60C5;&#x51B5;&#xFF0C;&#x60F3;&#x60F3;&#x5C31;&#x8D85;&#x9177; ;-) &#x4F60;&#x751A;&#x81F3;&#x4F1A;&#x60CA;&#x5947;&#x5730;&#x53D1;&#x73B0;&#xFF0C;&#x7F16;&#x7A0B;&#x5728;&#x8FD9;&#x4E2A;&#x4E16;&#x754C;&#x4E0A;&#x6709;&#x5982;&#x6B64;&#x591A;&#x597D;&#x73A9;&#x7684;&#x7528;&#x6CD5;&#xFF0C;&#x8FD8;&#x6709;&#x65E0;&#x6570; API &#x4EFB;&#x610F;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x65B0;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x5728;&#x4F60;&#x773C;&#x524D;&#x6E10;&#x6E10;&#x5C55;&#x5F00;&#x3002;&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x65B0;&#x4E16;&#x754C;&#xFF01;</p>
+<h3 id="1b">1B</h3>
+<p>&#x5982;&#x679C; 2wd1 11:42 &#x524D;&#xFF0C;&#x4F60;&#x8FD8;&#x672A;&#x5B8C;&#x6210; ch0 &#x6311;&#x6218;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F60;&#x6309;&#x4E0B;&#x8FF0;&#x5EFA;&#x8BAE;&#x884C;&#x52A8;&#xFF0C;&#x8DF3;&#x8FC7;&#x5176;&#x5B83;&#x65E0;&#x5173;&#x884C;&#x52A8;&#xFF1A;</p>
+<p>&#x5148;&#x7528; Python3 &#x6539;&#x5199; 7 &#x4E2A;&#x300A;Learn Python The Hard Way&#x300B;&#x5C0F;&#x7EC3;&#x4E60;&#xFF0C;&#x719F;&#x6089; Python3 &#x7684;&#x4F7F;&#x7528;
+&#x7136;&#x540E;&#x5B8C;&#x6210; ch1 &#x57FA;&#x7840;&#x4EFB;&#x52A1;&#xFF0C;&#x83B7;&#x5F97;&#x7B2C; 1 &#x4E2A; MVP &#x7A0B;&#x5E8F;
+&#x6700;&#x540E;&#x6311;&#x6218; ch2 &#x4EFB;&#x52A1;&#xFF08;&#x5176;&#x5B9E;&#x662F; ch1 &#x6210;&#x679C;&#x7684;&#x5347;&#x7EA7;&#x7248;&#xFF09;&#xFF0C;&#x8DDF;&#x4E0A;&#x8BFE;&#x7A0B;&#x8282;&#x594F;
+&#x5982;&#x679C;&#x4F60;&#x770B;&#x5230;&#x5468;&#x56F4;&#x8FD8;&#x6709;&#x5B66;&#x53CB;&#x6B7B;&#x78D5; ch0 &#x6240;&#x6709;&#x884C;&#x52A8;&#xFF08;&#x6BD4;&#x5982;&#x8C03;&#x8BD5;&#x5404;&#x79CD;&#x5DE5;&#x5177;&#xFF09;&#xFF0C;&#x800C;&#x975E;&#x5F00;&#x59CB;&#x6311;&#x6218; ch1 &#x548C; ch2 &#x4EFB;&#x52A1;&#xFF0C;&#x9EBB;&#x70E6;&#x63D0;&#x9192;&#x4E00;&#x4E0B; Ta &#x54DF;&#x3002;</p>
+<h3 id="2a">2A</h3>
+<p>ch2 &#x76EE;&#x6807;&#xFF1A;&#x901A;&#x8FC7; API &#x83B7;&#x53D6;&#x771F;&#x5B9E;&#x3001;&#x5373;&#x65F6;&#x7684;&#x6570;&#x636E;</p>
+<p>&#x672C;&#x7AE0;&#xFF0C;&#x4F60;&#x5C06;&#x5B66;&#x4E60;&#x901A;&#x8FC7; API &#x83B7;&#x53D6;&#x771F;&#x5B9E;&#x3001;&#x5373;&#x65F6;&#x7684;&#x6570;&#x636E;&#x6765;&#x5B8C;&#x5584;&#x5929;&#x6C14;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x4ECE;&#x672C;&#x7AE0;&#x5F00;&#x59CB;&#xFF0C;&#x5C06;&#x771F;&#x6B63;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4F60;&#x5B9E;&#x9645;&#x95EE;&#x9898;&#x7684;&#x5E94;&#x7528;&#x5566;&#x3002;</p>
+<p>&#x4F60;&#x5C06;&#x4F1A;&#x4F53;&#x9A8C;&#x5230;&#xFF1A;</p>
+<p>&#x5982;&#x4F55;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5408;&#x9002;&#x7684; API
+&#x4F7F;&#x7528; requests &#x6A21;&#x5757;&#x6765;&#x5BF9; API &#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x3001;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3001;&#x63A5;&#x53D7;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;
+&#x5904;&#x7406; API &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A; Python &#x4E2D;&#x5408;&#x9002;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</p>
+<h3 id="2b">2B</h3>
+<p>&#x4ECE;&#x8FD9;&#x4E00;&#x7AE0;&#x5F00;&#x59CB;&#xFF0C;&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x4E0D;&#x518D;&#x53EA;&#x548C;&#x672C;&#x5730;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x800C;&#x662F;&#x5229;&#x7528;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x516C;&#x5F00;&#x7684; API &#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</p>
+<p>&#x672C;&#x7AE0;&#x57FA;&#x7840;&#x4EFB;&#x52A1;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x5B66;&#x6709;&#x4F59;&#x529B;&#xFF0C;&#x4F60;&#x53EF;&#x5B8C;&#x6210;&#x8FDB;&#x9636;&#x4EFB;&#x52A1;&#xFF0C;&#x505A;&#x66F4;&#x591A;&#x63A2;&#x7D22;&#x3002;&#x5982;&#x679C;&#x8FDB;&#x9636;&#x4EFB;&#x52A1;&#x4E5F;&#x6298;&#x817E;&#x5B8C;&#x6BD5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x53D1;&#x90AE;&#x4EF6;&#x5230; course@openmindclub.com &#xFF0C;&#x7533;&#x8BF7;&#x4EFB;&#x52A1;&#x52A0;&#x7801;;-)</p>
+<p>&#x7ECF;&#x8FC7; 2 &#x5468;&#x73A9;&#x800D;&#xFF0C;&#x76F8;&#x4FE1;&#x4F60;&#x5DF2;&#x4F53;&#x4F1A;&#x5F00;&#x667A;&#x7FFB;&#x8F6C;&#x8BFE;&#x5802;&#x6A21;&#x5F0F;&#x7684;&#x7279;&#x8272; &#x2014;&#x2014; &#x4EC0;&#x4E48;&#x662F;&quot;&#x8BFE;&quot;? | <a href="hhttp://wiki.zoomquiet.io/IMHO/om-what-is-ke#_1" target="_blank">Zoom.Quiet Personal Static Wiki</a> &#x2014;&#x2014; &#x5F00;&#x667A;&#x8BFE;&#x7A0B;&#x63D0;&#x4F9B;&#x7684;&#x6559;&#x7EC3;&#x8D44;&#x6E90;&#x3001;&#x540C;&#x4FAA;&#x6C1B;&#x56F4;&#x4F3C;&#x4E00;&#x7247;&#x571F;&#x58E4;&#xFF0C;&#x6700;&#x7EC8;&#x957F;&#x51FA;&#x4EC0;&#x4E48;&#x6765;&#x4F60;&#x8BF4;&#x4E86;&#x7B97;</p>
+<h3 id="3a">3A</h3>
+<p>ch2 <a href="http://c.openmindclub.com/course/packs/5f2b1c80-6ee0-11e7-b904-7bda389c7ba7/cards/c3320290-8572-11e7-a304-d92161331260?page=1" target="_blank">&#x8BFE;&#x7A0B;&#x4EFB;&#x52A1;&#x4ECB;&#x7ECD;video</a></p>
+<h3 id="3b">3B</h3>
+<p>&#x672C;&#x7AE0;&#x57FA;&#x7840;&#x4EFB;&#x52A1;&#xFF1A;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x754C;&#x9762;&#x4E0B;&#x5929;&#x6C14;&#x67E5;&#x8BE2;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B9E;&#x73B0;&#x4EE5;&#x4E0B;&#x529F;&#x80FD;&#xFF1A;</p>
+<p>&#x8F93;&#x5165;&#x57CE;&#x5E02;&#x540D;&#xFF0C;&#x8FD4;&#x56DE;&#x8BE5;&#x57CE;&#x5E02;&#x6700;&#x65B0;&#x7684;&#x5929;&#x6C14;&#x6570;&#x636E;&#xFF1B;
+&#x8F93;&#x5165;&#x6307;&#x4EE4;&#xFF0C;&#x83B7;&#x53D6;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#xFF08;&#x4E00;&#x822C;&#x4F7F;&#x7528; h &#x6216; help&#xFF09;&#xFF1B;
+&#x8F93;&#x5165;&#x6307;&#x4EE4;&#xFF0C;&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x67E5;&#x8BE2;&#x4FE1;&#x606F;&#xFF08;&#x4E00;&#x822C;&#x4F7F;&#x7528; history&#xFF09;&#xFF1B;
+&#x8F93;&#x5165;&#x6307;&#x4EE4;&#xFF0C;&#x9000;&#x51FA;&#x7A0B;&#x5E8F;&#x7684;&#x4EA4;&#x4E92;&#xFF08;&#x4E00;&#x822C;&#x4F7F;&#x7528; quit &#x6216; exit&#xFF09;&#xFF1B;
+&#x63D0;&#x4EA4;&#x65F6;&#x9700;&#x5305;&#x542B;&#x8F6F;&#x4EF6;&#x4F7F;&#x7528;&#x8BF4;&#x660E;&#x4E66; README.md&#xFF0C; &#x80FD;&#x4EE4;&#x5176;&#x4ED6;&#x540C;&#x5B66;&#x6839;&#x636E;&#x8BF4;&#x660E;&#x4E66;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F7F;&#x7528;&#x6240;&#x6709;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5B8C;&#x6210;&#x57FA;&#x7840;&#x4EFB;&#x52A1;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x67E5;&#x770B;&#x540E;&#x9762;&#x7684;&#x8FDB;&#x9636;&#x4EFB;&#x52A1;&#x5361;&#x9886;&#x53D6;&#x8FDB;&#x9636;&#x4EFB;&#x52A1;&#xFF0C;&#x89E3;&#x9501;&#x66F4;&#x591A;&#x6280;&#x80FD; ;-)</p>
+<h3 id="4a">4A</h3>
+<h4 id="&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x672C;&#x7AE0;&#x5361;&#x7247;&#xFF1F;">&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x672C;&#x7AE0;&#x5361;&#x7247;&#xFF1F;</h4>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x4F60;&#x5DF2;&#x77E5;&#x6653;&#x672C;&#x7AE0;&#x4EFB;&#x52A1;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x5361;&#x7247;&#x5C06;&#x6307;&#x5F15;&#x4F60;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#xFF0C;&#x63D0;&#x793A;&#x4F60;&#x9700;&#x91CD;&#x70B9;&#x601D;&#x8003;&#x7684;&#x95EE;&#x9898;&#x3001;&#x53EF;&#x53C2;&#x8003;&#x7684;&#x8D44;&#x6599;&#x53CA;&#x53EF;&#x80FD;&#x8E29;&#x7684;&#x5751;&#x3002;</p>
+<p>&#x6309;&#x9633;&#x5FD7;&#x5E73;&#x8001;&#x5E08;&#x5728;&#x300C;&#x7F16;&#x7A0B;&#x4E0E;&#x5FC3;&#x667A;&#x300D;&#x89C6;&#x9891;&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x5206;&#x7C7B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x66F4;&#x9002;&#x5408;&#x81EA;&#x5DF1;&#x7684;&#x5B66;&#x4E60;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x65B0;&#x65B0;&#x624B;&#x6216;&#x65B0;&#x624B;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F60;&#x5148;&#x62BD; 15-20
+&#x5206;&#x949F;&#x5FEB;&#x901F;&#x603B;&#x89C8;&#x672C;&#x5361;&#x5305;&#x5269;&#x4F59;&#x5361;&#x7247;&#xFF0C;&#x5FC3;&#x4E2D;&#x6709;&#x6570;&#xFF0C;&#x518D;&#x5BF9;&#x7740;&#x4EFB;&#x52A1;&#x5361;&#x660E;&#x786E;&#x672C;&#x7AE0;&#x4EFB;&#x52A1;&#x91CD;&#x70B9;&#xFF08;&#x53EF;&#x67E5;&#x8BE2;&#x5B9E;&#x65F6;&#x5929;&#x6C14;&#x7684;&#x7A0B;&#x5E8F;&#xFF09;&#xFF0C;&#x5F00;&#x59CB;&#x8F93;&#x51FA;&#x3002;
+&#x5982;&#x679C;&#x4F60;&#x662F;&#x4E13;&#x4E1A;&#x4F59;&#x540C;&#x5B66;&#xFF0C;&#x4F60;&#x53EF;&#x5F00;&#x59CB;&#x81EA;&#x4E3B;&#x63A2;&#x7D22;&#xFF0C;&#x5B8C;&#x6210;&#x521D;&#x7248;&#x4EE3;&#x7801;&#x540E;&#xFF0C;&#x518D;&#x5BF9;&#x7740;&#x672C;&#x5361;&#x5305;&#x67E5;&#x6F0F;&#x8865;&#x7F3A;&#x3002;</p>
+<h3 id="4b">4B</h3>
+<p>&#x6BCF;&#x5468;&#x4F60;&#x5C06;&#x6536;&#x5230;&#x8FD9;&#x4EE5;&#x4E0B;&#x5361;&#x5305;&#xFF0C;&#x4F7F;&#x7528;&#x5EFA;&#x8BAE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x5F53;&#x7AE0;&#x4EFB;&#x52A1;&#x5361;&#x5305;&#xFF1A;&#x5468;&#x4E00; 11:42 &#x524D;&#x4E0A;&#x7EBF;&#xFF0C;&#x4ECB;&#x7ECD;&#x672C;&#x7AE0;&#x4EFB;&#x52A1;&#x5185;&#x5BB9;&#x548C;&#x4E00;&#x4E9B;&#x5B8C;&#x6210;&#x63D0;&#x793A;&#x3002;&#x6B64;&#x5361;&#x5305;&#x4F7F;&#x7528;&#x5EFA;&#x8BAE;&#x53C2;&#x89C1;&#x672C;&#x5361;&#x7247;&#x6B63;&#x9762;&#x3002;
+&#x5F53;&#x7AE0;&#x4EFB;&#x52A1;&#x63D0;&#x70B9;&#x5361;&#x5305;&#xFF1A;&#x5468;&#x56DB; 11:42 &#x524D;&#x4E0A;&#x7EBF;&#xFF0C;&#x8BE6;&#x7EC6;&#x8BB2;&#x89E3;&#x672C;&#x7AE0;&#x4EFB;&#x52A1;&#x601D;&#x8DEF;&#x3002;&#x5982;&#x679C;&#x6B64;&#x65F6;&#x4F60;&#x4F9D;&#x7136;&#x5BF9;&#x672C;&#x7AE0;&#x4EFB;&#x52A1;&#x6CA1;&#x6709;&#x7709;&#x76EE;&#xFF0C;&#x53EF;&#x7FFB;&#x770B;&#x6B64;&#x5361;&#x5305;&#xFF1B;&#x5982;&#x679C;&#x5BF9;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x6709;&#x628A;&#x63E1;&#xFF0C;&#x4E0D;&#x770B;&#x4E5F;&#x65E0;&#x59A8;&#x3002;
+&#x5F53;&#x7AE0;&#x4EFB;&#x52A1;&#x52A0;&#x6CB9;&#x5361;&#x5305;&#xFF1A;&#x4E0B;&#x5468;&#x4E8C; 19:42 &#x524D;&#x4E0A;&#x7EBF;&#xFF0C;&#x70B9;&#x8BC4;&#x5F53;&#x7AE0;&#x5178;&#x578B;&#x95EE;&#x9898;&#x3001;&#x4F18;&#x79C0;&#x5B9E;&#x8DF5;&#x3002;&#x4E00;&#x5B9A;&#x522B;&#x9519;&#x8FC7;&#x54E6;&#x3002;</p>
+<h3 id="5a">5A</h3>
+<p>&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x5929;&#x6C14;&#x6570;&#x636E;&#xFF0C;&#x5F53;&#x7136;&#x5F97;&#x627E;&#x76F8;&#x5E94;&#x673A;&#x6784;&#x8C03;&#x53D6;&#x3002;&#x90A3;&#x5982;&#x4F55;&#x8C03;&#x53D6;&#xFF1F;&#x8FD9;&#x5C31;&#x6D89;&#x53CA;&#x5230; API &#x5566;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x5404;&#x5927;&#x4E92;&#x8054;&#x7F51;&#x516C;&#x53F8;&#x548C;&#x673A;&#x6784;&#x90FD;&#x6709;&#x5BF9;&#x5916;&#x5F00;&#x653E;&#x7684; API &#xFF0C;&#x4F9B;&#x7528;&#x6237;&#x5B8C;&#x6210;&#x5F88;&#x591A;&#x6709;&#x610F;&#x601D;&#x7684;&#x4E8B;&#x60C5;&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5E26;&#x7740;&#x8FD9;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5148;&#x53BB;&#x63A2;&#x7D22;&#x4E00;&#x4E0B; API &#xFF1A;</p>
+<p>API &#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x89E3;&#x51B3;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF1F;
+API &#x4E00;&#x822C;&#x63A5;&#x6536;&#x4EC0;&#x4E48;&#x8F93;&#x5165;&#xFF0C;&#x8FD4;&#x56DE;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#xFF1F;
+&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x6709;&#x54EA;&#x4E9B;&#x7C7B;&#x578B;&#x7684; API &#xFF1F;&#x4ED6;&#x4EEC;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x628A; API &#x5F00;&#x653E;&#x51FA;&#x6765;&#xFF1F;
+flip buttongradient</p>
+<h3 id="5b">5B</h3>
+<p>&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=s7wmiS2mSXY" target="_blank">What is an API? - Youtube</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Application_Program_Interface" target="_blank">Application Programming Interface - Wikipedia</a>
+<a href="https://apigee.com/providers" target="_blank">- API Providers - Apigee</a></li>
+<li><a href="http://apistore.baidu.com/" target="_blank">API Store</a></li>
+<li><a href="http://readwrite.com/2013/09/19/api-defined/" target="_blank">What APIs Are And Why They&#x2019;re Important</a></li>
+</ul>
+<p>&#x5982;&#x679C;&#x63A2;&#x7D22;&#x56FD;&#x5916;&#x7684; API &#x6709;&#x7F51;&#x7EDC;&#x4E0D;&#x7A33;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x522B;&#x5FD8;&#x4E86;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;&#x3002;</p>
+<h3 id="6a&#xFF1A;-&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;api">6A&#xFF1A; &#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;API</h3>
+<p>&#x4E86;&#x89E3;&#x4EC0;&#x4E48;&#x662F; API &#x540E;&#xFF0C;&#x662F;&#x65F6;&#x5019;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x987A;&#x624B;&#x7684;&#x5929;&#x6C14; API &#x6765;&#x5B8C;&#x6210;&#x672C;&#x7AE0;&#x4EFB;&#x52A1;&#x5566;~</p>
+<p>&#x5F31;&#x6C34;&#x4E09;&#x5343;&#xFF0C;&#x53EA;&#x53D6;&#x4E00;&#x74E2;&#x3002;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x6709;&#x975E;&#x5E38;&#x591A;&#x7684;&#x5929;&#x6C14; API&#xFF0C;&#x90A3;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5408;&#x9002;&#x7684; API &#xFF1F;</p>
+<p>&#x5BF9;&#x4E8E;&#x672C;&#x4EFB;&#x52A1;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F60;&#x5728;&#x9009;&#x62E9; API &#x65F6;&#x8003;&#x8651;&#x4EE5;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;</p>
+<p>&#x662F;&#x5426;&#x6709; Python &#x7684; demo &#xFF1F;
+&#x4F7F;&#x7528;&#x4E0A;&#x6709;&#x54EA;&#x4E9B;&#x9650;&#x5236;&#xFF08;&#x6BD4;&#x5982;&#x8981;&#x6536;&#x8D39;&#xFF09;&#xFF1F;
+&#x6570;&#x636E;&#x6E90;&#x662F;&#x5426;&#x53EF;&#x9760;&#xFF1F;
+...</p>
+<h3 id="6b">6B</h3>
+<p>&#x6559;&#x7EC3;&#x68C0;&#x7D22;&#x4E86;&#x4E00;&#x4E9B; API &#x4F9B;&#x4F60;&#x9009;&#x62E9;&#xFF1A;</p>
+<p><a href="http://www.thinkpage.cn/" target="_blank">&#x5FC3;&#x77E5;&#x5929;&#x6C14; - &#x5929;&#x6C14;&#x6570;&#x636E; API &#x548C;BI - &#x51B7;&#x6696;&#x81EA;&#x5FC3;&#x77E5;</a></p>
+<p><a href="http://openweathermap.org/api" target="_blank">Weather API- OpenWeatherMap</a></p>
+<p><a href="http://wiki.swarma.net/index.php/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94API/v2" target="_blank">&#x5F69;&#x4E91;&#x5929;&#x6C14;API</a></p>
+<h3 id="7a">7A</h3>
+<h4 id="&#x4F7F;&#x7528;-requests-&#x6A21;&#x5757;&#x53D1;&#x9001;&#x8BF7;&#x6C42;">&#x4F7F;&#x7528; requests &#x6A21;&#x5757;&#x53D1;&#x9001;&#x8BF7;&#x6C42;</h4>
+<p>&#x9009;&#x5B9A;&#x4E86; API &#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Python &#x6765;&#x548C; API &#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x5566;&#x3002;</p>
+<p>requests &#x6A21;&#x5757;&#x662F;&#x4F60;&#x548C; API &#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x7684;&#x4E3B;&#x8981;&#x5DE5;&#x5177;&#x3002;&#x8FD9;&#x662F;&#x975E;&#x5E38;&#x4F18;&#x79C0;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x7F51;&#x7EDC;&#x6A21;&#x5757;&#xFF0C;&#x9700;&#x8981;&#x5355;&#x72EC;&#x5B89;&#x88C5;&#x3002;&#x5B89;&#x88C5;&#x597D;&#x540E;&#xFF0C;&#x8BF7;&#x4F60;&#x63A2;&#x7D22;&#xFF1A;</p>
+<p>&#x5982;&#x4F55;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5F15;&#x5165; requests &#x6A21;&#x5757;&#xFF1F;
+&#x5982;&#x4F55;&#x4F7F;&#x7528; requests &#x6A21;&#x5757;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF1F;
+POST &#x548C; GET &#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#xFF1F;&#x5982;&#x4F55;&#x7528; requests &#x6A21;&#x5757;&#x53D1;&#x9001; POST &#x6216;&#x8005; GET &#x8BF7;&#x6C42;&#xFF1F;</p>
+<h3 id="7b">7B</h3>
+<p>Python &#x548C; API &#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x4F7F;&#x7528;&#x7684;&#x662F; HTTP &#x534F;&#x8BAE;&#x3002;&#x5728;Python &#x4E2D;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x6A21;&#x5757; (Python &#x81EA;&#x5E26;&#x7684; urllib &#x6A21;&#x5757;&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x63A8;&#x8350;&#x7684;requests&#x6A21;&#x5757;) &#x53EF;&#x4EE5;&#x5BF9;&#x8BF7;&#x6C42;&#x548C;&#x63A5;&#x6536;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;&#x901A;&#x8FC7; HTTP &#x534F;&#x8BAE;&#x5728;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x4F20;&#x8F93;&#x3002;</p>
+<h4 id="&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;">&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;</h4>
+<ul>
+<li><a href="http://www.python-requests.org/en/master/" target="_blank">Requests: HTTP for Humans</a></li>
+<li><a href="http://www.w3school.com.cn/tags/html_ref_httpmethods.asp" target="_blank">HTTP &#x65B9;&#x6CD5;&#xFF1A;GET &#x5BF9;&#x6BD4; POST</a>
+-</li>
+</ul>
+<h3 id="8a">8A</h3>
+<p>&#x5904;&#x7406; API &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;</p>
+<p>&#x7ED9; API &#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x5C31;&#x8981;&#x8003;&#x8651;&#x5982;&#x4F55;&#x5904;&#x7406; API &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x5566;&#xFF1A;</p>
+<p>&#x5982;&#x4F55;&#x83B7;&#x5F97; API &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#xFF1F;
+&#x5982;&#x4F55;&#x5728; Python &#x4E2D;&#x5904;&#x7406; JSON &#x6570;&#x636E;&#xFF1F;
+JSON &#x7684;&#x6765;&#x5386;&#x662F;&#x4EC0;&#x4E48;&#xFF1F; &#x4E3A;&#x4EC0;&#x4E48;&#x7EDD;&#x5927;&#x591A;&#x6570; API &#x90FD;&#x9009;&#x62E9;&#x4EE5; JSON &#x7684;&#x65B9;&#x5F0F;&#x4F20;&#x9012;&#x6570;&#x636E;&#xFF1F;</p>
+<h3 id="8b">8B</h3>
+<p>JSON &#x662F;&#x4E00;&#x79CD;&#x5B58;&#x50A8;&#x548C;&#x4EA4;&#x6362;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x7684;&#x8BED;&#x6CD5;&#x3002;&#x5B83;&#x652F;&#x6301;&#x591A;&#x79CD;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x4E5F;&#x662F;&#x76EE;&#x524D;&#x6700;&#x6D41;&#x884C;&#x7684;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x60F3;&#x8981;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x5173;&#x4E8E; JSON &#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="http://www.json.org/" target="_blank">Introducing JSON</a></li>
+<li><a href="https://docs.python.org/3/library/json.html" target="_blank">19.2. json &#x2014; JSON encoder and decoder</a></li>
+<li><a href="http://docs.python-requests.org/en/master/user/quickstart/#json-response-content" target="_blank">JSON Response Content</a></li>
+</ul>
+<p>&#x55EF;&#x54FC;&#xFF0C;&#x81F3;&#x6B64;&#xFF0C;&#x672C;&#x7AE0;&#x57FA;&#x7840;&#x4EFB;&#x52A1;&#x5C31;&#x5B8C;&#x6210;&#x5F97;&#x5DEE;&#x4E0D;&#x591A;&#x5566;&#x3002;</p>
+<p>9A</p>
+<h4 id="&#x8FDB;&#x9636;&#x4EFB;&#x52A1;&#xFF1A;&#x73A9;&#x8F6C;-api&#xFF08;&#x9009;&#x505A;&#xFF09;">&#x8FDB;&#x9636;&#x4EFB;&#x52A1;&#xFF1A;&#x73A9;&#x8F6C; API&#xFF08;&#x9009;&#x505A;&#xFF09;</h4>
+<p>&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x5B8C;&#x6210;&#x57FA;&#x7840;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x63A2;&#x7D22;&#xFF1A;</p>
+<ul>
+<li>&#x4E4B;&#x524D;&#x53EA;&#x5728;&#x8F93;&#x5165;&#x57CE;&#x5E02;&#x540D;&#x65F6;&#x67E5;&#x8BE2;&#x5929;&#x6C14;&#xFF0C;&#x6709;&#x6CA1;&#x6709;&#x53EF;&#x80FD;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#xFF0C;&#x8BA9;&#x7A0B;&#x5E8F;&#x5B9A;&#x65F6;&#x67E5;&#x8BE2;&#x5929;&#x6C14;&#xFF1F;</li>
+<li>&#x9009;&#x4E00;&#x4E2A;&#x56FD;&#x5185; API &#x548C;&#x56FD;&#x5916; API &#x5206;&#x522B;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#xFF0C;&#x4E86;&#x89E3;&#x4E0D;&#x540C;&#x7684;&#x8C03;&#x7528;&#x59FF;&#x52BF;&#x3002;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6765;&#x8BBE;&#x8BA1; API &#xFF0C;&#x4F60;&#x4F1A;&#x600E;&#x4E48;&#x8BBE;&#x8BA1;&#xFF1F;</li>
+<li>&#x7ED9;&#x7A0B;&#x5E8F;&#x589E;&#x52A0;&#x6E29;&#x5EA6;&#x5355;&#x4F4D;&#x8F6C;&#x6362;&#x529F;&#x80FD;</li>
+</ul>
+<p>9B</p>
+<p>&#x4E0D;&#x540C;&#x56FD;&#x5BB6;&#x3001;&#x4E0D;&#x540C;&#x7EC4;&#x7EC7;&#x5BF9;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x529F;&#x80FD;&#x7684;&#x5929;&#x6C14; API &#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x5404;&#x6709;&#x4E0D;&#x540C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4E86;&#x89E3; 3-5 &#x4E2A;&#xFF0C;&#x627E;&#x5230;&#x4F60;&#x4EFB;&#x52A1;&#x66F4;&#x4F18;&#x96C5;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x672A;&#x6765;&#x4F60;&#x81EA;&#x5DF1;&#x8BBE;&#x8BA1; API &#x65F6;&#xFF0C;&#x5C31;&#x5BB9;&#x6613;&#x6709;&#x601D;&#x8DEF;&#x4E86;~</p>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li>Weather API - Free Weather API JSON and XML - Developer API Weather For Website - Apixu</li>
+<li>Weather API- OpenWeatherMap</li>
+<li>Dark Sky API</li>
+<li>Yahoo! Weather RSS feed</li>
+<li>&#x548C;&#x98CE;&#x5929;&#x6C14; | &#x66F4;&#x4E13;&#x4E1A;&#x7684;&#x5929;&#x6C14;&#x6570;&#x636E;&#x670D;&#x52A1;</li>
+</ul>
+<h3 id="10a-10b-bgm">10A-10B BGM</h3>
+<h3 id="11a">11A</h3>
+<h4 id="&#x5F69;&#x86CB;-&#x5927;&#x5988;&#x804A;&#x5982;&#x4F55;&#x63D0;&#x95EE;">&#x5F69;&#x86CB;-<a href="http://c.openmindclub.com/course/packs/5f2b1c80-6ee0-11e7-b904-7bda389c7ba7/cards/c3320290-8572-11e7-a304-d92161331260?page=1" target="_blank">&#x5927;&#x5988;&#x804A;&#x5982;&#x4F55;&#x63D0;&#x95EE;</a></h4>
+<p>11B</p>
+<p>&#x770B;&#x5B8C;&#x7F16;&#x7A0B;&#x8001;&#x53F8;&#x673A; Zoom.Quiet &#x804A;&#x5982;&#x4F55;&#x63D0;&#x95EE;&#xFF0C;&#x4F60;&#x6709;&#x65E0;&#x65B0;&#x601D;&#x8003;&#xFF1F;&#x6B22;&#x8FCE;&#x5199;&#x5728;&#x6559;&#x7A0B;&#x91CC;&#xFF0C;&#x53EB;&#x516D;&#x4E2A;&#x6708;&#x524D;&#x7684;&#x81EA;&#x5DF1;&#x66F4;&#x5FEB;&#x638C;&#x63E1;&#x63D0;&#x95EE;&#x8981;&#x4E49;~</p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x91CD;&#x6E29;&#xFF1A;</p>
+<ul>
+<li><a href="http://www.catb.org/~esr/faqs/smart-questions.html" target="_blank">How To Ask Questions The Smart Wa</a>y by Eric Steven Raymond</li>
+<li><a href="http://wiki.woodpecker.org.cn/moin/AskForHelp" target="_blank">&#x63D0;&#x95EE;&#x7684;&#x667A;&#x6167;</a></li>
+<li><a href="https://github.com/seajs/seajs/issues/545" target="_blank">&#x5982;&#x4F55;&#x5411;&#x5F00;&#x6E90;&#x793E;&#x533A;&#x63D0;&#x95EE;&#x9898; &#xB7; Issue #545 &#xB7; seajs/seajs</a>
+-<a href="http://blog.zhgdg.org/2014-10/dm34-how2ask/" target="_blank"> &#x73E0;&#x7684;&#x81EA;&#x767D;: 34 &#x5982;&#x4F55;&#x63D0;&#x95EE;?&#x624D;&#x5BF9;&#x4E16;&#x754C;&#x6709;&#x5E2E;&#x52A9;!</a></li>
+</ul>
+<p>12A &#x8BFE;&#x7A0B;&#x53CD;&#x9988;</p>
+<script type="text/javascript">var className='atoc';</script>
                                 
                                 </section>
                             
@@ -395,7 +553,7 @@
                 </a>
                 
                 
-                <a href="../week3/" class="navigation navigation-next " aria-label="Next page: 第3周">
+                <a href="homework.html" class="navigation navigation-next " aria-label="Next page: 作业.天气查询系统">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -406,7 +564,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第2周","level":"1.4","depth":1,"next":{"title":"第3周","level":"1.5","depth":1,"path":"week3/README.md","ref":"week3/README.md","articles":[]},"previous":{"title":"作业.天气查询系统","level":"1.3.1","depth":2,"path":"week1/homework.md","ref":"week1/homework.md","articles":[]},"dir":"neutral"},"config":{"plugins":["search","search-pro","atoc","new-flowchart","mermaid-atom-mden","download-pdf-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"new-flowchart":{},"atoc":{"addClass":true,"className":"atoc"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-atom-mden":{},"download-pdf-link":{"label":{"en":"Download PDF","fr":"Télécharger le PDF"},"base":"https://github.com/wangluzhou/pythonic_routine/tree/master/_book"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pythonic_routine","gitbook":">=2.0.0"},"file":{"path":"week2/README.md","mtime":"2017-08-19T08:51:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-20T08:57:58.649Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第2周:连接真实的世界","level":"1.4","depth":1,"next":{"title":"作业.天气查询系统","level":"1.4.1","depth":2,"path":"week2/homework.md","ref":"week2/homework.md","articles":[]},"previous":{"title":"作业.天气查询系统","level":"1.3.1","depth":2,"path":"week1/homework.md","ref":"week1/homework.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search","search-pro","atoc","new-flowchart","mermaid-atom-mden","download-pdf-link","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"new-flowchart":{},"livereload":{},"atoc":{"addClass":true,"className":"atoc"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-atom-mden":{},"download-pdf-link":{"label":{"en":"Download PDF","fr":"Télécharger le PDF"},"base":"https://github.com/wangluzhou/pythonic_routine/tree/master/_book"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pythonic_routine","gitbook":">=2.0.0"},"file":{"path":"week2/README.md","mtime":"2017-08-22T16:08:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-22T16:19:13.661Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -455,6 +613,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-download-pdf-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
