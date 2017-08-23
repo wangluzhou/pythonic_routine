@@ -10,6 +10,7 @@
 * [第2周:连接真实的世界](week2/README.md)
   * [作业.天气查询系统](week2/homework.md)
 * [第3周](week3/README.md)
+  * [Python.PEP8](week3/PEP8.md)
 * [第4周](week4/README.md)
 * [第5周](week5/README.md)
 * [第6周](week6/README.md)
