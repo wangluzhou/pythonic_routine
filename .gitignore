@@ -5,5 +5,4 @@ _book/*
 _book
 .*
 .DS_Store
-*.html
 !.gitignore
