@@ -44,3 +44,7 @@ git checkout master 切换到master分支
 ```
 
 ## 关于git无法识别.gitignore的原因
+
+
+## 将指定文件恢复到上一个版本
+[参考文章](http://blog.csdn.net/developer_biao/article/details/43971037)
