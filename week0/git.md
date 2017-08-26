@@ -1,6 +1,10 @@
 # git踩坑之路
-## git命令汇总
-## git status
+## git名词解释
+### 工作区(working directory)
+就是你的.git所在那个文件夹下
+### 版本库(Repository)
+即`.git`文件夹
+### git status
 查看你当前的库的状态
 ```
 lukes-MacBook:Py101-004 luke$ git status
@@ -44,7 +48,3 @@ git checkout master 切换到master分支
 ```
 
 ## 关于git无法识别.gitignore的原因
-
-
-## 将指定文件恢复到上一个版本
-[参考文章](http://blog.csdn.net/developer_biao/article/details/43971037)
