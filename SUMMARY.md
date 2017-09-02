@@ -18,3 +18,5 @@
 * [第7周](week7/README.md)
 * [第8周](week8/README.md)
 * [第9周](week9/README.md)
+  * [环境.docker搭建](week9/docker.md)
+  * [环境.amWiki个人知识管理](week9/amwiki.md)
