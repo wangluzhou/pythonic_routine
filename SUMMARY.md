@@ -7,6 +7,7 @@
 * [第1周](week1/README.md)
   * [作业.天气查询系统](week1/homework.md)
 * [第2周:连接真实的世界](week2/README.md)
+  * [补充.如何提问](week2/how-to-ask.md)
   * [作业.天气实时查询系统](week2/homework.md)
 * [第3周](week3/README.md)
   * [环境.搭建自己的jupyter研究环境](week3/jupyter.md)
