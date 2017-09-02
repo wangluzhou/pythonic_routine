@@ -215,5 +215,3 @@ JSON 是一种存储和交换文本信息的语法。它支持多种编程语言
 - [提问的智慧](http://wiki.woodpecker.org.cn/moin/AskForHelp)
 - [如何向开源社区提问题 · Issue #545 · seajs/seajs](https://github.com/seajs/seajs/issues/545)
 -[ 珠的自白: 34 如何提问?才对世界有帮助!](http://blog.zhgdg.org/2014-10/dm34-how2ask/)
-
-12A 课程反馈
