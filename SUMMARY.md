@@ -9,7 +9,7 @@
 * [第2周:连接真实的世界](week2/README.md)
   * [补充.如何提问](week2/how-to-ask.md)
   * [作业.天气实时查询系统](week2/homework.md)
-* [第3周.敲开web的大门](week3/README.md)
+* [第3周.敲开web大门](week3/README.md)
   * [环境.搭建自己的jupyter研究环境](week3/jupyter.md)
   * [环境.web环境部署](week3/web.md)
 * [第4周](week4/README.md)
